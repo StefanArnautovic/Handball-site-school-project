@@ -1,0 +1,45 @@
+﻿@model IEnumerable<STEF.Models.Poruka>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Poruke</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" style="border:2px solid #000;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Korisnik.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sadrzaj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Korisnik.Ime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sadrzaj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PorukaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PorukaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PorukaID })
+        </td>
+    </tr>
+}
+
+</table>

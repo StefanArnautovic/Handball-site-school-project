@@ -1,0 +1,25 @@
+﻿@model IEnumerable<STEF.Models.Korisnik>
+
+
+
+<!DOCTYPE html>
+
+<html>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBox("email")
+        <label>Sifra</label>
+        @Html.TextBox("sifra")
+        <input type="submit" value="Login" />
+        @ViewBag.Message
+    </div>
+
+    }
+    @Scripts.Render("~/budles/jqueryval")
+</body>
+</html>

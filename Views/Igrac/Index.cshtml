@@ -1,0 +1,70 @@
+﻿
+
+@model PagedList.IPagedList<STEF.Models.Igrac>
+@using PagedList.Mvc;
+@using PagedList;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Igraci</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" style="border:2px solid #000;">
+
+    <tr>
+        <th>
+            Naziv kluba
+        </th>
+        <th>
+            @Html.ActionLink("Ime", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            Prezime
+        </th>
+        <th>
+            @Html.ActionLink("GodinaRodjenja", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+        <th>
+            Pozicija
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tim.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GodinaRodjenja)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pozicija)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IgracID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IgracID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IgracID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

@@ -1,0 +1,92 @@
+﻿@using STEF.Models;
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" href="~/img/logo.png">
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 logo">
+                <a href="@Url.Action("Index", "Home")"><img src="~/img/logo2.png" alt="Logo"></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-6 meni">
+                <div class="meni" id="meni">
+                    @Html.ActionLink("O nama", "About", "Home")
+                    @if (SessionData.IsAuthenticated && SessionData.IsAdmin)
+    {
+                @Html.ActionLink("Korisnik", "Index", "Korisnik")
+                @Html.ActionLink("Poruka", "Index", "Poruka")
+                @Html.ActionLink("Igrač", "Index", "Igrac")
+                @Html.ActionLink("Takmičenje", "Index", "Takmicenje")
+}
+                    @Html.ActionLink("Tabela", "Index", "Tim")
+                    @Html.ActionLink("Kontakt", "Contact", "Home")
+                    @Html.ActionLink("Login", "Index", "Login")
+                    @Html.ActionLink("Registracija", "Create", "Registracija")
+                    @if (SessionData.IsAuthenticated)
+    {
+                <p style="color:white;padding-top:15px;"> @SessionData.user.Email</p>
+}
+                    <a href="/Login/Logout">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                    </a>
+                   @if (SessionData.IsAuthenticated && SessionData.IsAdmin)
+                    {
+                    <div class="search" style="padding:10px 20px; float:right;">
+                        @using (Html.BeginForm("Index", "Igrac", FormMethod.Get))
+    {@Html.TextBox("search") <input type="submit" value="Pretraga" />}
+                    </div>
+                    }
+                    
+               
+
+
+
+
+
+
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                </div>
+
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 footer">
+                    <div class="col-md-6 col-xs-6 prava">
+                        Copyright by Stefff &copy;
+                    </div>
+                    <div class="col-md-6 col-xs-6 smedia">
+                        <a href="https://www.facebook.com/rukometniklub.dorcol/"><img src="~/img/cf.png" alt="FB" style="height:70px"></a>
+                        <a href="#"><img src="~/img/cy.png" alt="yt" style="height:70px"></a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

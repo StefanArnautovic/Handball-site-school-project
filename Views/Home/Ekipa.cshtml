@@ -1,0 +1,44 @@
+﻿@model IEnumerable<STEF.Models.Tim>
+
+@{
+    /**/
+
+    ViewBag.Title = "Ekipa";
+}
+
+<h2>Tabela</h2>
+
+
+
+@foreach (var group in Model.GroupBy(t => t.Takmicenje.Grupa))
+{
+    <table class="table" style="border:2px solid #000;">
+        <caption>@group.Key</caption>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Takmicenje.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrojBodova)
+            </th>
+        </tr>
+        @foreach (var item in Model.Where(t => t.Takmicenje.Grupa == group.Key))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Takmicenje.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrojBodova)
+                </td>
+            </tr>
+        }
+    </table>
+}
+

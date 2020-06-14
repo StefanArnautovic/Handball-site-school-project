@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD9E5A18-95D3-4840-98E1-DD632F3AA052}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>STEF</RootNamespace>
+    <AssemblyName>STEF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IgracController.cs" />
+    <Compile Include="Controllers\KorisnikController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PorukaController.cs" />
+    <Compile Include="Controllers\RegistracijaController.cs" />
+    <Compile Include="Controllers\TakmicenjeController.cs" />
+    <Compile Include="Controllers\TimController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Igrac.cs" />
+    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Model1.cs" />
+    <Compile Include="Models\Poruka.cs" />
+    <Compile Include="Models\SessionData.cs" />
+    <Compile Include="Models\sysdiagrams.cs" />
+    <Compile Include="Models\Takmicenje.cs" />
+    <Compile Include="Models\Tim.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\a.jpg" />
+    <Content Include="img\b.jpg" />
+    <Content Include="img\cestitka.jpg" />
+    <Content Include="img\cf.png" />
+    <Content Include="img\cy.png" />
+    <Content Include="img\dorcol1.jpg" />
+    <Content Include="img\drcl.jpg" />
+    <Content Include="img\e.jpg" />
+    <Content Include="img\ek.jpg" />
+    <Content Include="img\ekipa.jpg" />
+    <Content Include="img\gosa.jpg" />
+    <Content Include="img\hb.jpg" />
+    <Content Include="img\i.jpg" />
+    <Content Include="img\igraci\lc.jpg" />
+    <Content Include="img\igraci\mk.jpg" />
+    <Content Include="img\igraci\ml.jpg" />
+    <Content Include="img\igraci\mm.jpg" />
+    <Content Include="img\igraci\nb.jpg" />
+    <Content Include="img\igraci\nm.jpg" />
+    <Content Include="img\igraci\po.jpg" />
+    <Content Include="img\igraci\sm.jpg" />
+    <Content Include="img\igraci\vp.jpg" />
+    <Content Include="img\k.jpg" />
+    <Content Include="img\kaldrma.jpg" />
+    <Content Include="img\kaldrma1.jpg" />
+    <Content Include="img\kaldrma2.jpg" />
+    <Content Include="img\kp.jpg" />
+    <Content Include="img\l.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\logo2.png" />
+    <Content Include="img\logo\mrkloznica.png" />
+    <Content Include="img\logo\orkbaric.png" />
+    <Content Include="img\logo\orklazarevac.png" />
+    <Content Include="img\logo\orkumcari.png" />
+    <Content Include="img\logo\rkdorcol.png" />
+    <Content Include="img\logo\rkgucevo_.png" />
+    <Content Include="img\logo\rkjedinstvo.png" />
+    <Content Include="img\logo\rkmorava.png" />
+    <Content Include="img\logo\rkpalanka.png" />
+    <Content Include="img\logo\rkprvaiskra.png" />
+    <Content Include="img\logo\rkrakovica.png" />
+    <Content Include="img\logo\rkrudar.png" />
+    <Content Include="img\logo\rkub.png" />
+    <Content Include="img\logo\rkudarnik.png" />
+    <Content Include="img\logo\smederevo2.png" />
+    <Content Include="img\m.jpg" />
+    <Content Include="img\napad.jpg" />
+    <Content Include="img\Odbrana.jpg" />
+    <Content Include="img\p.jpg" />
+    <Content Include="img\q.jpg" />
+    <Content Include="img\r.jpg" />
+    <Content Include="img\s.jpg" />
+    <Content Include="img\sr\sr1.jpg" />
+    <Content Include="img\sr\sr11.jpg" />
+    <Content Include="img\sr\sr2.jpg" />
+    <Content Include="img\sr\sr3.jpg" />
+    <Content Include="img\sr\sr4.jpg" />
+    <Content Include="img\sr\sr5.jpg" />
+    <Content Include="img\sr\sr6.jpg" />
+    <Content Include="img\sr\sr7.jpg" />
+    <Content Include="img\sr\sr8.jpg" />
+    <Content Include="img\sr\sr9.jpg" />
+    <Content Include="img\susret.jpg" />
+    <Content Include="img\svi.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la1.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la10.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la2.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la3.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la4.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la5.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la6.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la7.jpg" />
+    <Content Include="img\utakmice\drcl-laz\la8.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l1.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l10.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l11.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l12.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l13.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l14.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l15.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l16.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l2.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l3.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l4.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l5.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l6.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l7.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l8.jpg" />
+    <Content Include="img\utakmice\drcl-loz\l9.jpg" />
+    <Content Include="img\vest.png" />
+    <Content Include="img\w.jpg" />
+    <Content Include="img\y.jpg" />
+    <Content Include="img\ytt.png" />
+    <Content Include="img\z.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\AirAmerica-Regular.otf" />
+    <Content Include="fonts\Amatic-Bold.ttf" />
+    <Content Include="fonts\AmaticSC-Regular.ttf" />
+    <Content Include="fonts\aristapro-fat.otf" />
+    <Content Include="fonts\CNP.ttf" />
+    <Content Include="fonts\Dulcelin.otf" />
+    <Content Include="fonts\FineBlackboard.ttf" />
+    <Content Include="fonts\GermaniaOne-Regular.ttf" />
+    <Content Include="fonts\gooddog.otf" />
+    <Content Include="fonts\kottaone-regular.ttf" />
+    <Content Include="fonts\KyletsDemo.ttf" />
+    <Content Include="fonts\Milkshake.ttf" />
+    <Content Include="fonts\PWAlabama.ttf" />
+    <Content Include="fonts\santeliaroughline.otf" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Igrac\Create.cshtml" />
+    <Content Include="Views\Igrac\Delete.cshtml" />
+    <Content Include="Views\Igrac\Details.cshtml" />
+    <Content Include="Views\Igrac\Edit.cshtml" />
+    <Content Include="Views\Igrac\Index.cshtml" />
+    <Content Include="Views\Korisnik\Create.cshtml" />
+    <Content Include="Views\Korisnik\Delete.cshtml" />
+    <Content Include="Views\Korisnik\Details.cshtml" />
+    <Content Include="Views\Korisnik\Edit.cshtml" />
+    <Content Include="Views\Korisnik\Index.cshtml" />
+    <Content Include="Views\Poruka\Create.cshtml" />
+    <Content Include="Views\Poruka\Delete.cshtml" />
+    <Content Include="Views\Poruka\Details.cshtml" />
+    <Content Include="Views\Poruka\Edit.cshtml" />
+    <Content Include="Views\Poruka\Index.cshtml" />
+    <Content Include="Views\Takmicenje\Create.cshtml" />
+    <Content Include="Views\Takmicenje\Delete.cshtml" />
+    <Content Include="Views\Takmicenje\Details.cshtml" />
+    <Content Include="Views\Takmicenje\Edit.cshtml" />
+    <Content Include="Views\Takmicenje\Index.cshtml" />
+    <Content Include="Views\Tim\Create.cshtml" />
+    <Content Include="Views\Tim\Delete.cshtml" />
+    <Content Include="Views\Tim\Details.cshtml" />
+    <Content Include="Views\Tim\Edit.cshtml" />
+    <Content Include="Views\Tim\Index.cshtml" />
+    <Content Include="Views\Home\Ekipa.cshtml" />
+    <Content Include="Views\Registracija\Create.cshtml" />
+    <Content Include="Views\Registracija\Index.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
+    <Content Include="Views\Login\Delete.cshtml" />
+    <Content Include="Views\Login\Details.cshtml" />
+    <Content Include="Views\Login\Edit.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Welcome.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="fonts\NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53548</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53548/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

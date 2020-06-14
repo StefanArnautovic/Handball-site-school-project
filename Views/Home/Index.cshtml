@@ -1,0 +1,24 @@
+﻿@using STEF.Models;
+
+
+@{
+    ViewBag.Title = "Home";
+}
+
+
+@if (Session["Korisnik"] == null)
+{
+    <h2>
+        Pocetna
+    </h2>
+
+
+}
+else
+{
+    <p>
+        Dobrodosli
+        @(
+             SessionData.user.Email        )
+    </p>
+}
